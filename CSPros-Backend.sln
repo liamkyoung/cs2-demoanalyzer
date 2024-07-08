@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSProsLibrary", "CSProsLibrary\CSProsLibrary.csproj", "{AF55DFC7-479E-4251-8B62-E09271D5A2F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS2DemoAnalyzer", "CS2DemoAnalyzer\CS2DemoAnalyzer.csproj", "{F2FBD857-C8C4-4E16-99B9-8877314987B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{D79E3EE3-2458-4281-9543-3148455CD6E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF55DFC7-479E-4251-8B62-E09271D5A2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF55DFC7-479E-4251-8B62-E09271D5A2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF55DFC7-479E-4251-8B62-E09271D5A2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF55DFC7-479E-4251-8B62-E09271D5A2F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2FBD857-C8C4-4E16-99B9-8877314987B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2FBD857-C8C4-4E16-99B9-8877314987B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2FBD857-C8C4-4E16-99B9-8877314987B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2FBD857-C8C4-4E16-99B9-8877314987B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D79E3EE3-2458-4281-9543-3148455CD6E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D79E3EE3-2458-4281-9543-3148455CD6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D79E3EE3-2458-4281-9543-3148455CD6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D79E3EE3-2458-4281-9543-3148455CD6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
