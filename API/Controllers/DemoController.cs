@@ -13,15 +13,17 @@ public class DemoController : ControllerBase
 {
     private readonly IDemoAnalyzerService _demoAnalyzer;
     private readonly IDemoDownloaderService _demoDownloader;
+    private readonly IScrapingService _scrapingService;
     private readonly ISkinService _skinService;
     private readonly IWeaponService _weaponService;
     
-    public DemoController(IDemoAnalyzerService demoAnalyzer, IDemoDownloaderService demoDownloader, ISkinService skinService, IWeaponService weaponService)
+    public DemoController(IDemoAnalyzerService demoAnalyzer, IDemoDownloaderService demoDownloader, ISkinService skinService, IWeaponService weaponService, IScrapingService scrapingService)
     {
         _demoAnalyzer = demoAnalyzer;
         _demoDownloader = demoDownloader;
         _skinService = skinService;
         _weaponService = weaponService;
+        _scrapingService = scrapingService;
     }
     
     [HttpGet("AnalyzeExampleDemo")]
@@ -43,13 +45,6 @@ public class DemoController : ControllerBase
     {
         await _demoAnalyzer.AnalyzeAllDemos();
         return Ok();
-    }
-    
-    [HttpGet("GetSkinInfo")]
-    public async Task<IActionResult> GetSkinInfoFromWeaponId(int weaponItemId)
-    {
-        var skinInfo = _skinService.GetSkinInfoFromWeaponItemId(weaponItemId);
-        return Ok(skinInfo);
     }
     
     [HttpGet("DownloadDemos")]

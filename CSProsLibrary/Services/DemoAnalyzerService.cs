@@ -1,5 +1,6 @@
 using CSProsLibrary.Models;
 using CSProsLibrary.Services.Interfaces;
+using CSProsLibrary.Services.Interfaces.Scraping;
 using DemoFile;
 using DemoFile.Sdk;
 using Microsoft.Extensions.Logging;
@@ -12,15 +13,17 @@ public class DemoAnalyzerService : IDemoAnalyzerService
         private readonly ISkinService _skinService;
         private readonly IWeaponService _weaponService;
         private readonly IGameService _gameService;
+        private readonly IScrapingService _scrapingService;
         private readonly ILogger<DemoAnalyzerService> _logger;
 
         public DemoAnalyzerService(IPlayerService playerService, ISkinService skinService, IWeaponService weaponService,
-                IGameService gameService, ILogger<DemoAnalyzerService> logger)
+                IGameService gameService, IScrapingService scrapingService, ILogger<DemoAnalyzerService> logger)
         {
                 _playerService = playerService;
                 _skinService = skinService;
                 _weaponService = weaponService;
                 _gameService = gameService;
+                _scrapingService = scrapingService;
                 _logger = logger;
         }
         
@@ -234,7 +237,7 @@ public class DemoAnalyzerService : IDemoAnalyzerService
                                 }
 
                                 // Look up skin, store it, log usage
-                                var skinInfo = _skinService.GetSkinInfoFromWeaponItemId(weaponItemId);
+                                var skinInfo = _scrapingService.GetSkinInfoFromWeaponItemId(weaponItemId);
 
                                 if (skinInfo == null)
                                 {

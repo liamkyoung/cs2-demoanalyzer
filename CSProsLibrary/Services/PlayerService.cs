@@ -2,6 +2,7 @@ using CSProsLibrary.Models;
 using CSProsLibrary.Models.Dtos;
 using CSProsLibrary.Repositories.Interfaces;
 using CSProsLibrary.Services.Interfaces;
+using CSProsLibrary.Services.Interfaces.Scraping;
 using CSProsLibrary.Services.Scraping.Pages;
 using CSProsLibrary.Utils;
 using Microsoft.Extensions.Logging;
@@ -17,13 +18,9 @@ public class PlayerService : IPlayerService
     private readonly IWeaponRepository _weaponRepository;
     private readonly ICountryRepository _countryRepository;
     private readonly ITeamService _teamService;
-    private readonly PlayerPage _playerPage;
-    private readonly IWebDriver _webDriver;
     private readonly ILogger<PlayerService> _logger;
 
-    public PlayerService(IWebDriver webDriver,
-        ICountryRepository countryRepository,
-        PlayerPage playerPage,
+    public PlayerService(ICountryRepository countryRepository,
         IPlayerRepository playerRepository,
         ISkinRepository skinRepository,
         ISkinUsageRepository skinUsageRepository,
@@ -31,8 +28,6 @@ public class PlayerService : IPlayerService
         ITeamService teamService,
         ILogger<PlayerService> logger)
     {
-        _webDriver = webDriver;
-        _playerPage = playerPage;
         _countryRepository = countryRepository;
         _playerRepository = playerRepository;
         _skinUsageRepository = skinUsageRepository;
@@ -112,34 +107,6 @@ public class PlayerService : IPlayerService
             Team = team,
             TimeSinceLastUpdated = DateTimeOffset.UtcNow
         };
-    }
-    
-    public async Task<IEnumerable<Player>> GetPlayersByHltvLinks(IEnumerable<string> playerHltvLinks)
-    {
-        var players = new List<Player>();
-        foreach (var hltvLink in playerHltvLinks)
-        {
-            var player = await GetPlayerByHltvLink(hltvLink);
-
-            if (player != null && (player.TimeSinceLastUpdated + TimeSpan.FromDays(7)) > DateTimeOffset.Now)
-            {
-                players.Add(player);
-            }
-            else
-            {
-                var playerDto = await ParsePlayerProfile(hltvLink);
-
-                if (playerDto == null)
-                {
-                    _logger.LogError($"Could not parse player info: {hltvLink}");
-                    continue;
-                }
-                    
-                players.Add(await GeneratePlayer(playerDto));
-            }
-        }
-
-        return players;
     }
 
     public async Task<Dictionary<Weapon, Skin?>> GetPlayerSkinsForGame(Player player, Game game)
@@ -251,12 +218,6 @@ public class PlayerService : IPlayerService
         return skinFrequencies.ToList().Where(skinGroup => skinGroup.WeaponId == weapon.Id);
     }
 
-    public async Task<PlayerProfileDto?> ParsePlayerProfile(string playerProfileHref)
-    {
-        _playerPage.GoToPage(playerProfileHref);
-        return _playerPage.GetPlayerData();
-    }
-
     public async Task<bool> AddPlayer(Player player)
     {
         try
@@ -278,31 +239,6 @@ public class PlayerService : IPlayerService
         var player = await GeneratePlayer(playerProfile);
 
         return await AddPlayer(player);
-    }
-
-    public async Task<bool> AddPlayersByHltvLinks(IEnumerable<string> playerLinks)
-    {
-        try
-        {
-            var players = await GetPlayersByHltvLinks(playerLinks);
-
-            if (!players.Any())
-            {
-                return false;
-            }
-            
-            // issue with adding -- some being duplicates and some not
-            await _playerRepository.AddRangeAsync(players); 
-            _logger.LogInformation($"Added {players.Count()} players to DB.");
-        }
-        catch (Exception e)
-        {
-            _logger.LogError($"Could not add players to DB... | {e.StackTrace}");
-            
-            return false;
-        }
-
-        return true;
     }
 
     public async Task<bool> UpdatePlayer(PlayerProfileDto playerProfile)

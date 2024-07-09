@@ -11,112 +11,17 @@ namespace CSProsLibrary.Services;
 
 public class SkinService : ISkinService
 {
-    private readonly IPlayerRepository _playerRepository;
     private readonly ISkinUsageRepository _skinUsageRepository;
     private readonly ISkinRepository _skinRepository;
     private readonly IWeaponRepository _weaponRepository;
     private readonly ILogger<SkinService> _logger;
 
-    public SkinService(IPlayerRepository playerRepository, ISkinRepository skinRepository, ISkinUsageRepository skinUsageRepository, IWeaponRepository weaponRepository, ILogger<SkinService> logger)
+    public SkinService(ISkinRepository skinRepository, ISkinUsageRepository skinUsageRepository, IWeaponRepository weaponRepository, ILogger<SkinService> logger)
     {
-        _playerRepository = playerRepository;
         _skinUsageRepository = skinUsageRepository;
         _skinRepository = skinRepository;
         _weaponRepository = weaponRepository;
         _logger = logger;
-    }
-
-    public ParsedSkinInfoDto? GetSkinInfoFromWeaponItemId(long weaponItemId)
-    {
-        var url = $"https://csgo.exchange/item/{weaponItemId}";
-        HtmlWeb web = new HtmlWeb();
-
-        var htmlDoc = web.Load(url);
-
-        try
-        {
-            var fullSkinText = htmlDoc.DocumentNode.SelectSingleNode("//div[@class='detailItem']/div[2]/h3").InnerText;
-            var skinRarityText = htmlDoc.DocumentNode.SelectSingleNode("//div[@class='detailItem']/div[2]/div")
-                .InnerText;
-            var imgContainer = htmlDoc.DocumentNode.SelectSingleNode("//div[@class='detailItem']/div[1]/div");
-
-            var imgSrcStyleText = imgContainer?.GetAttributeValue("style", string.Empty);
-
-            if (fullSkinText == null || skinRarityText == null || imgSrcStyleText == null)
-            {
-                return null;
-            }
-
-            var skinName = ParseSkinName(fullSkinText);
-            var imgSrc = ParseImgSrc(imgSrcStyleText);
-            var skinRarity = ParseSkinRarity(skinRarityText);
-            
-            if (skinName != null && imgSrc != null && skinRarity != null)
-            {
-                return new ParsedSkinInfoDto()
-                {
-                    SkinName = skinName,
-                    ImgSrc = imgSrc,
-                    SkinRarity = skinRarity.Value
-                };
-            }
-        }
-        catch (Exception e)
-        {
-            // _logger.LogError($"Error parsing page on csgo.exchange/items/{weaponItemId}", e.Message);
-        }
-
-        _logger.LogInformation($"Could not find skin: https://csgo.exchange/item/{weaponItemId}");
-        return null;
-
-
-        string? ParseSkinName(string? skinName)
-        {
-            if (skinName == null) return null;
-            
-            // Formatting Results
-            // OG Format:
-            // Name:   StatTrak AK-47 | Redline -> Redline
-            var splitWeaponName = skinName.Split('|', StringSplitOptions.TrimEntries);
-
-            if (splitWeaponName.Length == 2)
-            {
-                return splitWeaponName[1];
-            }
-
-            return null;
-        }
-
-        string? ParseImgSrc(string? imgSrcStyleText)
-        {
-            if (imgSrcStyleText == null) return null; 
-            // ImgSrc: width:180px; height:180px;background-image:url(URL) -> URL
-            var splitStrings = imgSrcStyleText.Split('(', StringSplitOptions.TrimEntries);
-
-            if (splitStrings.Length == 2)
-            {
-                return splitStrings[1].TrimEnd(')');
-            }
-
-            return null;
-        }
-
-        SkinRarity? ParseSkinRarity(string skinRarityText)
-        {
-            // Cannot do Enum.TryParse() because of "Grade" after consumer, industrial, etc. and not covert, extraordinary, etc.
-            return skinRarityText.ToLower() switch 
-            {
-                "consumer grade" => SkinRarity.Consumer,
-                "industrial grade" => SkinRarity.Industrial,
-                "mil-spec grade" => SkinRarity.MilSpec,
-                "restricted" => SkinRarity.Restricted,
-                "classified" => SkinRarity.Classified,
-                "covert" => SkinRarity.Covert,
-                "extraordinary" => SkinRarity.Extraordinary,
-                "contraband" => SkinRarity.Contraband,
-                _ => null
-            };
-        }
     }
 
     public async Task<Skin?> GetSkinByWeaponItemIdAsync(long weaponItemId)

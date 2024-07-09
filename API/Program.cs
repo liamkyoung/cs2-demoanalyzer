@@ -40,6 +40,7 @@ builder.Services.AddTransient<IDemoAnalyzerService, DemoAnalyzerService>();
 builder.Services.AddTransient<IDemoDownloaderService, DemoDownloaderService>();
 
 // Pages
+builder.Services.AddTransient<IScrapingService, ScrapingService>();
 builder.Services.AddTransient<MatchPage>();
 builder.Services.AddTransient<PlayerPage>();
 builder.Services.AddTransient<ResultsListPage>();

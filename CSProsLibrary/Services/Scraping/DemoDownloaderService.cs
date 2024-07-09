@@ -16,8 +16,7 @@ public class DemoDownloaderService : IDemoDownloaderService
     private readonly IGameService _gameService;
     private readonly ITeamService _teamService;
     private readonly IPlayerService _playerService;
-    private readonly MatchPage _matchPage;
-    private readonly ResultsListPage _resultsPage;
+    private readonly IScrapingService _scrapingService;
     private readonly ILogger<DemoDownloaderService> _logger;
     private readonly IWebDriver _driver;
     
@@ -26,12 +25,11 @@ public class DemoDownloaderService : IDemoDownloaderService
     private bool TeamShouldBeUpdated(Team team) =>
         (team.TimeSinceLastUpdated + TimeSpan.FromDays(7)) < DateTimeOffset.Now;
 
-    public DemoDownloaderService(IWebDriver driver, MatchPage matchPage, ResultsListPage resultsPage, IGameService gameService, ITeamService teamService, IPlayerService playerService, ILogger<DemoDownloaderService> logger)
+    public DemoDownloaderService(IWebDriver driver, IScrapingService scrapingService, IGameService gameService, ITeamService teamService, IPlayerService playerService, ILogger<DemoDownloaderService> logger)
     {
         _driver = driver;
-        _matchPage = matchPage;
-        _resultsPage = resultsPage;
         _logger = logger;
+        _scrapingService = scrapingService;
         _gameService = gameService;
         _teamService = teamService;
         _playerService = playerService;
@@ -48,7 +46,7 @@ public class DemoDownloaderService : IDemoDownloaderService
 
     public async Task Start()
     {
-        var matchLinks = _resultsPage.GetMatches();
+        var matchLinks = _scrapingService.GetMatchLinks();
 
         foreach (var matchUrl in matchLinks)
         {
@@ -58,7 +56,7 @@ public class DemoDownloaderService : IDemoDownloaderService
                 continue;
             }
             
-            var parsedMatchPage = await GetParsedMatchResultData(matchUrl);
+            var parsedMatchPage = _scrapingService.GetParsedMatchResultData(matchUrl);
 
             if (parsedMatchPage == null)
             {
@@ -87,10 +85,10 @@ public class DemoDownloaderService : IDemoDownloaderService
                 }
             
                 await _gameService.AddGameAsync(game);
-                _matchPage.GoToPage(matchUrl);
+                _scrapingService.GoToMatchPage(matchUrl);
             }
             
-            _matchPage.DownloadDemosForMatch(); // Download before or after parsing game info?
+            _scrapingService.DownloadDemosForMatch(); // Download before or after parsing game info?
             // associate game with demo name
         }
         
@@ -103,7 +101,7 @@ public class DemoDownloaderService : IDemoDownloaderService
         
         if (team == null || TeamShouldBeUpdated(team))
         {
-            var teamAProfile = _teamService.ParseTeamPage(teamProfileLink);
+            var teamAProfile = _scrapingService.ParseTeamPage(teamProfileLink);
 
             if (teamAProfile == null)
             {
@@ -119,7 +117,7 @@ public class DemoDownloaderService : IDemoDownloaderService
 
                 if (player == null)
                 {
-                    var playerProfile = await _playerService.ParsePlayerProfile(playerHltvLink);
+                    var playerProfile = await _scrapingService.ParsePlayerProfile(playerHltvLink);
 
                     if (playerProfile == null)
                     {
@@ -138,25 +136,6 @@ public class DemoDownloaderService : IDemoDownloaderService
         }
 
         return team;
-    }
-    
-
-    private async Task<IEnumerable<MatchResultDto>?> GetParsedMatchResultData(string matchUrl)
-    {
-        _matchPage.PageHref = matchUrl;
-        var hltvGameLink = _matchPage.PageHref;
-
-        _matchPage.GoToPage(matchUrl);
-        // Get game info
-        var parsedGameInfo = _matchPage.GetInfoForMatches();
-
-        if (!parsedGameInfo.Any())
-        {
-            _logger.LogError($"Could not parse game info for: {matchUrl}");
-            return null;
-        }
-
-        return parsedGameInfo;
     }
 
     public void ManuallyExtractDemos()

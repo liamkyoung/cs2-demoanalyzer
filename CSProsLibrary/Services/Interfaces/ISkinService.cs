@@ -7,7 +7,6 @@ namespace CSProsLibrary.Services.Interfaces;
 
 public interface ISkinService
 {
-    ParsedSkinInfoDto? GetSkinInfoFromWeaponItemId(long weaponItemId);
     Task<IEnumerable<Skin>> GetAllSkinsUsedByPlayer(Player player);
     Task<IEnumerable<Skin>?> GetAllSkinsUsedInGameByPlayer(Player player, Game game);
 

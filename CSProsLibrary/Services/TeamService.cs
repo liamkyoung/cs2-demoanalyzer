@@ -11,13 +11,11 @@ namespace CSProsLibrary.Services;
 public class TeamService : ITeamService
 {
     private readonly ITeamRepository _teamRepository;
-    private readonly TeamPage _teamPage;
     private readonly ILogger<ITeamService> _logger;
     private readonly ICountryService _countryService;
 
-    public TeamService(TeamPage teamPage, ITeamRepository teamRepository, ICountryService countryService, ILogger<ITeamService> logger)
+    public TeamService(ITeamRepository teamRepository, ICountryService countryService, ILogger<ITeamService> logger)
     {
-        _teamPage = teamPage;
         _teamRepository = teamRepository;
         _countryService = countryService;
         _logger = logger;
@@ -75,23 +73,6 @@ public class TeamService : ITeamService
             ImageSrc = parsedTeamData.ImageSrc,
             TimeSinceLastUpdated = DateTimeOffset.UtcNow
         };
-    }
-    
-    public TeamProfileDto? ParseTeamPage(string teamUrl)
-    {
-        _logger.LogInformation($"Parsing team: {teamUrl}");
-        _teamPage.GoToPage(teamUrl);
-        
-        var teamInfo = _teamPage.GetTeamInfo();
-
-        if (teamInfo == null)
-        {
-            _logger.LogError($"Could not parse team data from page. {teamUrl}");
-            return null;
-        }
-
-        _logger.LogInformation($"Parsed Team: {teamInfo.Name}");
-        return teamInfo;
     }
 
     public async Task<bool> AddTeamAsync(Team team)

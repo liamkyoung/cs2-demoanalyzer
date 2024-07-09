@@ -7,7 +7,6 @@ public interface ITeamService
 {
     Task<Team?> GetTeamById(int id);
     Task<Team?> GetTeamByName(string teamName);
-    TeamProfileDto? ParseTeamPage(string teamUrl);
     Task<bool> AddTeamAsync(Team team);
     Task<Team?> AddTeamAsync(TeamProfileDto teamProfile);
     Task<Team?> GenerateTeamFromParsedData(TeamProfileDto teamProfileDto);
