@@ -8,9 +8,9 @@ namespace CSProsLibrary.Repositories;
 
 public class SkinUsageRepository : ISkinUsageRepository
 {
-    private readonly IApplicationDbContext _context;
+    private readonly ApplicationDbContext _context;
 
-    public SkinUsageRepository(IApplicationDbContext context)
+    public SkinUsageRepository(ApplicationDbContext context)
     {
         _context = context;
     }

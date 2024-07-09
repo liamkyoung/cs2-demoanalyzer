@@ -7,9 +7,9 @@ namespace CSProsLibrary.Repositories;
 
 public class PlayerRepository : IPlayerRepository
 {
-    private readonly IApplicationDbContext _context;
+    private readonly ApplicationDbContext _context;
 
-    public PlayerRepository(IApplicationDbContext context)
+    public PlayerRepository(ApplicationDbContext context)
     {
         _context = context;
     }

@@ -1,5 +1,3 @@
-using CS2DemoAnalyzer;
-using CS2DemoAnalyzer.Data;
 using CSProsLibrary;
 using CSProsLibrary.Repositories;
 using CSProsLibrary.Repositories.Interfaces;
@@ -24,8 +22,11 @@ class Program
     {
         using IHost host = CreateHostBuilder(args).Build();
 
-        var demoAnalyzer = host.Services.GetService<IDemoAnalyzerService>();
-        await demoAnalyzer.AnalyzeAllDemos();
+        var demoDownloader = host.Services.GetService<IDemoDownloaderService>();
+
+        await demoDownloader.Start();
+        // var demoAnalyzer = host.Services.GetService<IDemoAnalyzerService>();
+        // await demoAnalyzer.AnalyzeAllDemos();
     }
     
     static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -74,11 +75,8 @@ class Program
                 services.AddTransient<PlayerPage>();
                 services.AddTransient<ResultsListPage>();
                 services.AddTransient<TeamPage>();
-
-
-
+                
                 // Repositories
-                services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
                 services.AddScoped<IPlayerRepository, PlayerRepository>();
                 services.AddScoped<IWeaponRepository, WeaponRepository>();
                 services.AddScoped<ISkinRepository, SkinRepository>();

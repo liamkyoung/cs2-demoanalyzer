@@ -8,9 +8,9 @@ namespace CSProsLibrary.Repositories;
 
 public class WeaponRepository : IWeaponRepository
 {
-    private readonly IApplicationDbContext _context;
+    private readonly ApplicationDbContext _context;
 
-    public WeaponRepository(IApplicationDbContext context)
+    public WeaponRepository(ApplicationDbContext context)
     {
         _context = context;
     }

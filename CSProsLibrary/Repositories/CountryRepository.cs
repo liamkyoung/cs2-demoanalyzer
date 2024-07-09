@@ -9,9 +9,9 @@ namespace CSProsLibrary.Repositories;
 
 public class CountryRepository : ICountryRepository
 {
-    private readonly IApplicationDbContext _context;
+    private readonly ApplicationDbContext _context;
     
-    public CountryRepository(IApplicationDbContext context)
+    public CountryRepository(ApplicationDbContext context)
     {
         _context = context;
     }

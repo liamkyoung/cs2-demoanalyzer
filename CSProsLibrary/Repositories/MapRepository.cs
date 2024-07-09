@@ -6,9 +6,9 @@ namespace CSProsLibrary.Repositories;
 
 public class MapRepository : IMapRepository
 {
-    private readonly IApplicationDbContext _context;
+    private readonly ApplicationDbContext _context;
 
-    public MapRepository(IApplicationDbContext context)
+    public MapRepository(ApplicationDbContext context)
     {
         _context = context;
     }

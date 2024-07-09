@@ -2,7 +2,6 @@
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/bin/Debug/net8.0/selenium-manager/macos/selenium-manager
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/bin/Debug/net8.0/selenium-manager/windows/selenium-manager.exe
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/bin/Debug/net8.0/CSProsLibrary.deps.json
-/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/bin/Debug/net8.0/CSProsLibrary.runtimeconfig.json
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/bin/Debug/net8.0/CSProsLibrary.dll
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/bin/Debug/net8.0/CSProsLibrary.pdb
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/Debug/net8.0/CSProsLibrary.csproj.AssemblyReference.cache
@@ -14,5 +13,4 @@
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/Debug/net8.0/CSProsLibrary.dll
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/Debug/net8.0/refint/CSProsLibrary.dll
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/Debug/net8.0/CSProsLibrary.pdb
-/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/Debug/net8.0/CSProsLibrary.genruntimeconfig.cache
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/Debug/net8.0/ref/CSProsLibrary.dll

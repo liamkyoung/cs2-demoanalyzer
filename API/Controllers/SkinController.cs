@@ -24,9 +24,9 @@ public class SkinController : ControllerBase
     [HttpGet("Test")]
     public async Task<IActionResult> Test()
     {
-        var country = await _countryService.GetCountryByName("United States");
+        var countries = await _countryService.ListAllCountries();
 
-        return Ok(country);
+        return Ok(countries);
     }
     
     

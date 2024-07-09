@@ -25,9 +25,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ApplicationDbContext>(
-    options => options.UseNpgsql("Host=localhost;Port=5432;Database=cspros;Username=cspros;Password=cspros;"));
-
-builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Services
 builder.Services.AddTransient<IPlayerService, PlayerService>();

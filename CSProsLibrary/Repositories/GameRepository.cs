@@ -6,9 +6,9 @@ namespace CSProsLibrary.Repositories;
 
 public class GameRepository : IGameRepository
 {
-    private readonly IApplicationDbContext _context;
+    private readonly ApplicationDbContext _context;
 
-    public GameRepository(IApplicationDbContext context)
+    public GameRepository(ApplicationDbContext context)
     {
         _context = context;
     }

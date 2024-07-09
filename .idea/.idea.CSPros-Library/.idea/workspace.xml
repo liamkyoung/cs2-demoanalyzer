@@ -10,119 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7e99777-1906-4404-ab66-8991aee4e7b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.CSPros-Library/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/ApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/Controllers/ExampleController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/CS2DemoAnalyzer.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/DBSetup/Countries.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/DBSetup/Maps.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/DBSetup/Weapons.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240702191553_InitialMigration.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240702191553_InitialMigration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240702230619_AddWeaponItemsTable.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240702230619_AddWeaponItemsTable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240702230739_RemoveNavigationProperty.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240702230739_RemoveNavigationProperty.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240702231138_AddSkinPropertyToWeaponId.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240702231138_AddSkinPropertyToWeaponId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703012211_AddDemoNameToWeapon.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703012211_AddDemoNameToWeapon.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703050151_AddDemoNameToMap.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703050151_AddDemoNameToMap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703154004_ChangedIntToLongWeaponItem.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703154004_ChangedIntToLongWeaponItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703160538_AddedWeaponAndNameUniqueness.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703160538_AddedWeaponAndNameUniqueness.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703183230_AddedWeaponItemIdLongForSkinUsage.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703183230_AddedWeaponItemIdLongForSkinUsage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703183516_RemovedWeaponItemIdFromSkinUsage.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240703183516_RemovedWeaponItemIdFromSkinUsage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240704125942_RemovedSkinListFromWeapon.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240704125942_RemovedSkinListFromWeapon.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240704130507_RemovedSkinUsageFromSkin.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240704130507_RemovedSkinUsageFromSkin.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240704142623_RemovedSkinUsageFromPlayer.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240704142623_RemovedSkinUsageFromPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240705201708_AddedEagerLoadingToPlayer.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240705201708_AddedEagerLoadingToPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240707023556_AddedTeamImageSrc.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/20240707023556_AddedTeamImageSrc.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS2DemoAnalyzer/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/CSProsLibrary.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/IApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Country.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/MatchResultDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/ParsedSkinInfoDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/PlayerProfileDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/PlayersUsingSkinDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/PopularSkinListDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/SkinFrequencyDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/TeamProfileDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/Viewmodels/PlayerProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/Viewmodels/SkinProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/Viewmodels/SkinUsageDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/Viewmodels/TeamProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Dtos/Viewmodels/WeaponProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Enums/SkinRarity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Enums/SocialMedia.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Enums/TeamExclusivity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Enums/WeaponType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Game.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Map.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/PlayerSocials.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Skin.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/SkinUsage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Team.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/Weapon.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Models/WeaponItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/CountryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/GameRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/Interfaces/ICountryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/Interfaces/IGameRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/Interfaces/IMapRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/Interfaces/IPlayerRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/Interfaces/ISkinRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/Interfaces/ISkinUsageRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/Interfaces/ITeamRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/Interfaces/IWeaponRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/MapRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/PlayerRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/SkinRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/SkinUsageRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/TeamRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Repositories/WeaponRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/CountryService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/DemoAnalyzerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/FileWatcherBackgroundService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/GameService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Interfaces/ICountryService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Interfaces/IDemoAnalyzerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Interfaces/IGameService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Interfaces/IPlayerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Interfaces/ISkinService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Interfaces/ITeamService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Interfaces/IWeaponService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Interfaces/Scraping/IDemoDownloaderService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/PlayerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Scraping/DemoDownloaderService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Scraping/Pages/MatchPage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Scraping/Pages/PlayerPage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Scraping/Pages/ResultsListPage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Scraping/Pages/TeamPage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Scraping/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/Scraping/ScrapingHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/SkinService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/TeamService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Services/WeaponService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSProsLibrary/Utils/StringSimilarityCalculator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../cspros-demo-downloader/dbquery.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../cspros-demo-downloader/dbquery.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../cspros-demo-downloader/demodownloader.py" beforeDir="false" />
@@ -259,7 +146,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720475701853</updated>
-      <workItem from="1720475702956" duration="3626000" />
+      <workItem from="1720475702956" duration="4147000" />
     </task>
     <servers />
   </component>

@@ -21,5 +21,5 @@ public class Game
     public required DateTimeOffset StartedAt { get; set; }
     public ICollection<SkinUsage> SkinUsages { get; set; }
     public bool MatchParsed { get; set; } = false;
-    //public bool MatchHadParsingError { get; set; } = false;
+    public bool MatchHadParsingError { get; set; } = false;
 }

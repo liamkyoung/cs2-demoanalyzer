@@ -9,10 +9,10 @@ namespace CSProsLibrary.Repositories;
 
 public class TeamRepository : ITeamRepository
 {
-    private readonly IApplicationDbContext _context;
+    private readonly ApplicationDbContext _context;
     private readonly ILogger<TeamRepository> _logger;
 
-    public TeamRepository(IApplicationDbContext context, ILogger<TeamRepository> logger)
+    public TeamRepository(ApplicationDbContext context, ILogger<TeamRepository> logger)
     {
         _context = context;
         _logger = logger;
