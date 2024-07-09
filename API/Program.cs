@@ -35,32 +35,6 @@ builder.Services.AddTransient<ITeamService, TeamService>();
 builder.Services.AddTransient<ICountryService, CountryService>();
 builder.Services.AddTransient<IWeaponService, WeaponService>();
 
-builder.Services.AddHostedService<FileWatcherBackgroundService>();
-builder.Services.AddTransient<IDemoAnalyzerService, DemoAnalyzerService>();
-builder.Services.AddTransient<IDemoDownloaderService, DemoDownloaderService>();
-
-// Pages
-builder.Services.AddTransient<IScrapingService, ScrapingService>();
-builder.Services.AddTransient<MatchPage>();
-builder.Services.AddTransient<PlayerPage>();
-builder.Services.AddTransient<ResultsListPage>();
-builder.Services.AddTransient<TeamPage>();
-
-// Web Scraping Services
-builder.Services.AddSingleton<IWebDriver, FirefoxDriver>(provider =>
-{
-    FirefoxOptions options = new FirefoxOptions();
-    options.EnableDownloads = true;
-    options.ScriptTimeout = TimeSpan.FromSeconds(30);
-    options.SetPreference("browser.download.folderList", 2);
-    options.SetPreference("browser.download.manager.showWhenStarting", false);
-    options.SetPreference("browser.download.dir", Environment.GetEnvironmentVariable("DEMO_DOWNLOAD_DIR"));
-    options.SetPreference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.rar");
-    // Configure your Firefox options here, if necessary
-    
-    return new FirefoxDriver(options);
-});
-
 // Repositories
 builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 builder.Services.AddScoped<IWeaponRepository, WeaponRepository>();

@@ -43,6 +43,7 @@ class Program
                     options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
                 
                 // Web Scraping Services
+                services.AddTransient<IScrapingService, ScrapingService>();
                 services.AddSingleton<IWebDriver, FirefoxDriver>(provider =>
                 {
                     FirefoxOptions options = new FirefoxOptions();
@@ -88,4 +89,4 @@ class Program
                 // Add logging
                 services.AddLogging(configure => configure.AddConsole());
             });
-});
+}

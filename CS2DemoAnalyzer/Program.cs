@@ -23,6 +23,10 @@ class Program
         using IHost host = CreateHostBuilder(args).Build();
 
         var demoAnalyzer = host.Services.GetService<IDemoAnalyzerService>();
+        var fileManager = host.Services.GetService<IFileManagerService>();
+        
+        fileManager.ExtractAllDemoArchives();
+        
         await demoAnalyzer.AnalyzeAllDemos();
         
         // Could also make it depend on command with FileWatcherService.
@@ -48,6 +52,7 @@ class Program
                     options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
                 
                 // Web Scraping Services
+                services.AddTransient<IScrapingService, ScrapingService>();
                 services.AddSingleton<IWebDriver, FirefoxDriver>(provider =>
                 {
                     FirefoxOptions options = new FirefoxOptions();
@@ -61,7 +66,8 @@ class Program
     
                     return new FirefoxDriver(options);
                 });
-                
+
+                services.AddSingleton<IFileManagerService, FileManagerService>();
                 services.AddTransient<IPlayerService, PlayerService>();
                 services.AddTransient<IGameService, GameService>();
                 services.AddTransient<ISkinService, SkinService>();

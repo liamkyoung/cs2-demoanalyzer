@@ -14,16 +14,18 @@ public class DemoAnalyzerService : IDemoAnalyzerService
         private readonly IWeaponService _weaponService;
         private readonly IGameService _gameService;
         private readonly IScrapingService _scrapingService;
+        private readonly IFileManagerService _fileManager;
         private readonly ILogger<DemoAnalyzerService> _logger;
 
         public DemoAnalyzerService(IPlayerService playerService, ISkinService skinService, IWeaponService weaponService,
-                IGameService gameService, IScrapingService scrapingService, ILogger<DemoAnalyzerService> logger)
+                IGameService gameService, IScrapingService scrapingService, IFileManagerService fileManager, ILogger<DemoAnalyzerService> logger)
         {
                 _playerService = playerService;
                 _skinService = skinService;
                 _weaponService = weaponService;
                 _gameService = gameService;
                 _scrapingService = scrapingService;
+                _fileManager = fileManager;
                 _logger = logger;
         }
         
@@ -39,23 +41,19 @@ public class DemoAnalyzerService : IDemoAnalyzerService
         
                 try
                 {
-                        var files = Directory.GetFiles(DEMO_EXTRACT_PATH, "*.dem");
-                        _logger.LogInformation($"Found {files.Length} demofiles to parse.");
-                        foreach (var filePath in files)
+                        var demoFilePaths = _fileManager.GetAllExtractedDemoFilePaths();
+                        _logger.LogInformation($"Found {demoFilePaths.Count()} demofiles to parse.");
+                        foreach (var filePath in demoFilePaths)
                         {
-                                if (!filePath.EndsWith(".dem"))
-                                {
-                                        continue;
-                                }
-
                                 await AnalyzeDemo(filePath);
                         }
                 }
                 catch (Exception ex)
                 {
-                        _logger.LogError(ex.StackTrace);
+                        _logger.LogError($"Could not analyze demo: {ex.StackTrace}");
                 }
         
+                _logger.LogInformation("Analyzed all demo files.");
         }
 
         public async Task AnalyzeDemo(string filePath)
@@ -64,7 +62,6 @@ public class DemoAnalyzerService : IDemoAnalyzerService
                 var weaponIdToDemoName = new Dictionary<long, string>();
 
                 // Step 1: Initialize DemoParser
-                _logger.LogInformation("[PA]");
                 var demo = new DemoParser();
 
 
@@ -118,11 +115,7 @@ public class DemoAnalyzerService : IDemoAnalyzerService
                                 // Delete file because do not want to re-parse demo if cannot be validated
                                 // The most likely cause for a validation error is that the game has already been parsed.
                                 // Second most likely is that too many matches on player names
-                                if (File.Exists(filePath))
-                                {
-                                        File.Delete(filePath);
-                                        _logger.LogInformation($"[Validation Errors] -> Demofile {filePath} deleted successfully.");
-                                }
+                                _fileManager.TryDeleteFile(filePath);
 
                                 return;
                         }
@@ -153,12 +146,8 @@ public class DemoAnalyzerService : IDemoAnalyzerService
                         _logger.LogInformation($"Logging Game {gameData.Game.Id} - ({gameData.Map.DemoName})");
                         await _gameService.SetGameAsParsed(gameData.Game.Id);
                         _logger.LogInformation($"[SUCCESSFUL PARSE] Game (id: {gameData.Game.Id}) - ({gameData.Map.DemoName}) has been parsed");
-                        
-                        if (File.Exists(filePath))
-                        {
-                                File.Delete(filePath);
-                                _logger.LogInformation($"[Deleted] Demofile {filePath} successfully.");
-                        }
+
+                        _fileManager.TryDeleteFile(filePath);
                         
                 }
                 catch (Exception e)

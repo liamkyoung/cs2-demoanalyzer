@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CS2DemoAnalyzer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23b9421e3d24e355cefa8d1f9a8189e8de119e6f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c2834756f619789aee369028118fb83959414a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("CS2DemoAnalyzer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CS2DemoAnalyzer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
