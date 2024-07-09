@@ -28,7 +28,6 @@ public class DemoAnalyzerService : IDemoAnalyzerService
         }
         
         private static readonly string DEMO_EXTRACT_PATH = Environment.GetEnvironmentVariable("DEMO_ANALYZE_DIR")!;
-        private static readonly string DEMO_DOWNLOAD_PATH = Environment.GetEnvironmentVariable("DEMO_DOWNLOAD_DIR")!;
         
         public async Task AnalyzeAllDemos()
         {
@@ -41,6 +40,7 @@ public class DemoAnalyzerService : IDemoAnalyzerService
                 try
                 {
                         var files = Directory.GetFiles(DEMO_EXTRACT_PATH, "*.dem");
+                        _logger.LogInformation($"Found {files.Length} demofiles to parse.");
                         foreach (var filePath in files)
                         {
                                 if (!filePath.EndsWith(".dem"))
@@ -64,7 +64,7 @@ public class DemoAnalyzerService : IDemoAnalyzerService
                 var weaponIdToDemoName = new Dictionary<long, string>();
 
                 // Step 1: Initialize DemoParser
-                _logger.LogInformation("Initializing DemoParser...");
+                _logger.LogInformation("[PA]");
                 var demo = new DemoParser();
 
 
@@ -85,8 +85,7 @@ public class DemoAnalyzerService : IDemoAnalyzerService
                                 // New weaponId
                                 if (weaponIdUsage.TryGetValue(weaponItemId, out var _))
                                 {
-                                        playerToWeaponIdUsage[playerName][
-                                                weaponItemId]++; // Increment number of times used.
+                                        playerToWeaponIdUsage[playerName][weaponItemId]++; // Increment number of times skin was used.
                                 }
                                 else
                                 {

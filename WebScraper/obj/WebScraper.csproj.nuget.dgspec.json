@@ -1,0 +1,154 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/WebScraper/WebScraper.csproj": {}
+  },
+  "projects": {
+    "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/CSProsLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/CSProsLibrary.csproj",
+        "projectName": "CSProsLibrary",
+        "projectPath": "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/CSProsLibrary.csproj",
+        "packagesPath": "/Users/lky/.nuget/packages/",
+        "outputPath": "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/lky/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "DemoFile": {
+              "target": "Package",
+              "version": "[0.15.1, )"
+            },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.61, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.22.0, )"
+            },
+            "SharpCompress": {
+              "target": "Package",
+              "version": "[0.37.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/WebScraper/WebScraper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/WebScraper/WebScraper.csproj",
+        "projectName": "WebScraper",
+        "projectPath": "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/WebScraper/WebScraper.csproj",
+        "packagesPath": "/Users/lky/.nuget/packages/",
+        "outputPath": "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/WebScraper/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/lky/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/CSProsLibrary.csproj": {
+                "projectPath": "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/CSProsLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

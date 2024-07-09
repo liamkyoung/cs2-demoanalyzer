@@ -43,6 +43,7 @@ public class FileWatcherBackgroundService : BackgroundService
         
         _demoWatcher.Created += HandleAnalyzeDemo;
         _demoWatcher.EnableRaisingEvents = true;
+        _logger.LogInformation("File Watcher BG Service Activated");
 
         return Task.CompletedTask;
     }

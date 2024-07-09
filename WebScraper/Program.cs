@@ -1,3 +1,4 @@
+﻿using CS2DemoAnalyzer;
 using CSProsLibrary;
 using CSProsLibrary.Repositories;
 using CSProsLibrary.Repositories.Interfaces;
@@ -14,21 +15,15 @@ using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace CS2DemoAnalyzer;
-
 class Program
 {
     public static async Task Main(string[] args)
     {
         using IHost host = CreateHostBuilder(args).Build();
 
-        var demoAnalyzer = host.Services.GetService<IDemoAnalyzerService>();
-        await demoAnalyzer.AnalyzeAllDemos();
-        
-        // Could also make it depend on command with FileWatcherService.
-        
-        // var demoAnalyzer = host.Services.GetService<IDemoAnalyzerService>();
-        // await demoAnalyzer.AnalyzeAllDemos();
+        var demoDownloader = host.Services.GetService<IDemoDownloaderService>();
+
+        await demoDownloader.Start();
     }
     
     static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -93,4 +88,4 @@ class Program
                 // Add logging
                 services.AddLogging(configure => configure.AddConsole());
             });
-}
+});
