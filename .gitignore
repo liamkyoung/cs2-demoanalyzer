@@ -1,1 +1,10 @@
 *.dem
+./API/appsettings.Development.json
+./CS2DemoAnalyzer/appsettings.json
+./CS2DemoAnalyzer/appsettings.Development.json
+./CS2DemoAnalyzer/bin/Debug/net8.0/appsettings.json
+./CS2DemoAnalyzer/bin/Debug/net8.0/appsettings.Development.json
+./WebScraper/appsettings.json
+./WebScraper/appsettings.Development.json
+./WebScraper/bin/Debug/net8.0/appsettings.json
+./WebScraper/bin/Debug/net8.0/appsettings.Development.json
