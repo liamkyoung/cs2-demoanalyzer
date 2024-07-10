@@ -5,7 +5,8 @@ public class PlayerProfile
     public required string PlayerName { get; set; }
     public required string Uri { get; set; }
     
-    public string? Team { get; set; }
+    public string? TeamName { get; set; }
+    public string? TeamProfileImage { get; set; }
     
     public string? CountryAbbreviation { get; set; }
     public string? ProfileImage { get; set; }
@@ -18,7 +19,8 @@ public class PlayerProfile
         {
             PlayerName = player.GamerTag,
             Uri = $"/players/{fGamerTag}",
-            Team = player.Team?.Name,
+            TeamProfileImage = player.Team?.ImageSrc,
+            TeamName = player.Team?.Name,
             CountryAbbreviation = player.Country?.AbbreviatedName,
             ProfileImage = player.ProfileImage
         };
