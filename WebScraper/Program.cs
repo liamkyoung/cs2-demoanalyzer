@@ -40,7 +40,7 @@ class Program
 
                 // Register ApplicationDbContext
                 services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+                    options.UseNpgsql(configuration.GetConnectionString("Production")));
                 
                 // Web Scraping Services
                 services.AddTransient<IScrapingService, ScrapingService>();

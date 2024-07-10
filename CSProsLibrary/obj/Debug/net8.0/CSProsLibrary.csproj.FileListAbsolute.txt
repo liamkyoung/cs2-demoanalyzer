@@ -14,3 +14,5 @@
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/Debug/net8.0/refint/CSProsLibrary.dll
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/Debug/net8.0/CSProsLibrary.pdb
 /Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/Debug/net8.0/ref/CSProsLibrary.dll
+/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/bin/Debug/net8.0/CSProsLibrary.runtimeconfig.json
+/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/Debug/net8.0/CSProsLibrary.genruntimeconfig.cache
