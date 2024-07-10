@@ -60,7 +60,7 @@ if (app.Environment.IsDevelopment())
 app.MapControllers();
 
 app.UseCors(b =>
-    b.WithOrigins("http://localhost:3000")
+    b.WithOrigins("https://cspros-frontend.vercel.app")
         .AllowAnyMethod()
         .AllowAnyHeader()
         .AllowCredentials());
