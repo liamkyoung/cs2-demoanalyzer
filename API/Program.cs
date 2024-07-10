@@ -25,7 +25,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ApplicationDbContext>(
-    options => options.UseNpgsql(builder.Configuration.GetConnectionString("Production")));
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+Console.WriteLine(builder.Configuration.GetConnectionString("DefaultConnection"));
 
 // Services
 builder.Services.AddTransient<IPlayerService, PlayerService>();
@@ -55,14 +57,24 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
     app.UseHttpsRedirection();
+
+    app.UseCors(b =>
+        b.WithOrigins("http://localhost:3000")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+
+}
+else
+{
+    app.UseCors(b =>
+        b.WithOrigins("https://www.cs-pro-skins.com")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+
 }
 
 app.MapControllers();
-
-app.UseCors(b =>
-    b.WithOrigins("https://www.cs-pro-skins.com")
-        .AllowAnyMethod()
-        .AllowAnyHeader()
-        .AllowCredentials());
 
 app.Run();
