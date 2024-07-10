@@ -1,2 +1,3 @@
 *.dem
 ./API/appsettings.Development.json
+./API/appsettings.json
