@@ -60,7 +60,7 @@ if (app.Environment.IsDevelopment())
 app.MapControllers();
 
 app.UseCors(b =>
-    b.WithOrigins("https://cspros-frontend.vercel.app")
+    b.WithOrigins("https://cs-pro-skins.com")
         .AllowAnyMethod()
         .AllowAnyHeader()
         .AllowCredentials());
