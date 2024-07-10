@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSProsLibrary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f624df0f889f6abcd640e5559f2afc3ece328363")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ef2a87963444acfc0d92c951fdae9c91a22fd80")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSProsLibrary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSProsLibrary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

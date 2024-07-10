@@ -25,9 +25,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ApplicationDbContext>(
-    options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("CSPROS_PROD")));
 
-Console.WriteLine(builder.Configuration.GetConnectionString("DefaultConnection"));
+Console.WriteLine(builder.Configuration.GetConnectionString("CSPROS_PROD"));
 
 // Services
 builder.Services.AddTransient<IPlayerService, PlayerService>();
