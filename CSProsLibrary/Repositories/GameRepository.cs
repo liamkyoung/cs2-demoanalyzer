@@ -62,4 +62,9 @@ public class GameRepository : IGameRepository
         await _context.Games.AddAsync(game);
         await _context.SaveChangesAsync();
     }
+
+    public async Task<int> GetNumberOfTotalGames()
+    {
+        return _context.Games.Count();
+    }
 }

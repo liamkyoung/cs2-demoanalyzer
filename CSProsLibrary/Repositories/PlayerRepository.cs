@@ -77,4 +77,9 @@ public class PlayerRepository : IPlayerRepository
     {
         return await _context.Players.Select(p => p.GamerTag).ToListAsync();
     }
+
+    public async Task<int> GetNumberOfPlayers()
+    {
+        return _context.Players.Count();
+    }
 }

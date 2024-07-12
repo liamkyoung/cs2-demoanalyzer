@@ -8,4 +8,5 @@ public interface IGameRepository
     Task SetGameAsParsed(int gameId);
     IEnumerable<Game>? GetGamesByHltvLinkAsync(string hltvLink);
     IEnumerable<Game>? GetGamesByTeamsAndMap(int teamAId, int teamBId, int mapId);
+    Task<int> GetNumberOfTotalGames();
 }

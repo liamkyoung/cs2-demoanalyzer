@@ -27,6 +27,7 @@
     <ItemGroup>
       <Folder Include="Data\Demos\Compressed\" />
       <Folder Include="Data\Demos\Extracted\" />
+      <Folder Include="Logs\" />
     </ItemGroup>
 
     <ItemGroup>
@@ -44,6 +45,10 @@
       <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0-preview.5.24306.7" />
       <PackageReference Include="Npgsql" Version="8.0.3" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="appsettings.json" />
     </ItemGroup>
 
 </Project>

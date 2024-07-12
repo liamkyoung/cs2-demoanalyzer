@@ -15,4 +15,6 @@ public interface ISkinRepository
     Task AddWeaponItemAsync(long weaponItemId, Skin? skin);
     Task<bool> HasWeaponItem(long weaponItemId);
     Task<IEnumerable<Skin>> GetTrendingSkins(TimeSpan timePeriod, int limit = 4);
+    Task<int> GetNumberOfSkins();
+    Task<int> GetNumberOfKills();
 }

@@ -30,6 +30,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 Console.WriteLine(builder.Configuration.GetConnectionString("CSPROS_DEV"));
 
 // Services
+builder.Services.AddTransient<IAnalyticsService, AnalyticsService>();
 builder.Services.AddTransient<IPlayerService, PlayerService>();
 builder.Services.AddTransient<IGameService, GameService>();
 builder.Services.AddTransient<ISkinService, SkinService>();

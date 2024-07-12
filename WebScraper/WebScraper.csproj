@@ -18,4 +18,12 @@
       <ProjectReference Include="..\CSProsLibrary\CSProsLibrary.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="appsettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Logs\" />
+    </ItemGroup>
+
 </Project>

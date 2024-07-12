@@ -1,4 +1,7 @@
 *.dem
+**/Logs/*
+**/appsettings.json
+**/appsettings.Development.json
 ./API/appsettings.Development.json
 ./CS2DemoAnalyzer/appsettings.json
 ./CS2DemoAnalyzer/appsettings.Development.json

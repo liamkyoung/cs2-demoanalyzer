@@ -12,4 +12,5 @@ public interface IPlayerRepository
      Task<Player?> GetByHltvLinkAsync(string hltvLink);
      Task<IEnumerable<Player>> GetTrendingPlayers(TimeSpan timePeriod, int limit = 5);
      Task<IEnumerable<string>> GetAllPlayerGamerTags();
+     Task<int> GetNumberOfPlayers();
 }

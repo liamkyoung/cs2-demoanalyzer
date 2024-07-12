@@ -79,4 +79,14 @@ public class SkinRepository : ISkinRepository
         
         return skins;
     }
+
+    public async Task<int> GetNumberOfSkins()
+    {
+        return _context.Skins.Count();
+    }
+    
+    public async Task<int> GetNumberOfKills()
+    {
+        return await _context.SkinUsages.Select(s => s.KillsInGame).SumAsync();
+    }
 }
