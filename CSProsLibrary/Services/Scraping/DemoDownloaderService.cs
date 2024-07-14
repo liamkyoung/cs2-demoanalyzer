@@ -104,17 +104,24 @@ public class DemoDownloaderService : IDemoDownloaderService
         
         if (team == null || TeamShouldBeUpdated(team))
         {
-            var teamAProfile = _scrapingService.ParseTeamPage(teamProfileLink);
+            var teamProfile = _scrapingService.ParseTeamPage(teamProfileLink);
 
-            if (teamAProfile == null)
+            if (teamProfile == null)
             {
                 return null;
             }
-                
-            team = await _teamService.AddTeamAsync(teamAProfile);
 
+            if (team != null && TeamShouldBeUpdated(team))
+            {
+                await _teamService.UpdateTeamAsync(teamProfile);
+            }
+            else
+            {
+                team = await _teamService.AddTeamAsync(teamProfile);
+            }
+            
             // Add or update each player that's found.
-            foreach (var playerHltvLink in teamAProfile.PlayerHltvLinks)
+            foreach (var playerHltvLink in teamProfile.PlayerHltvLinks)
             {
                 var player = await _playerService.GetPlayerByHltvLink(playerHltvLink);
 

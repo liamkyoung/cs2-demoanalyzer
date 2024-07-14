@@ -40,19 +40,20 @@ public class TeamRepository : ITeamRepository
         return true;
     }
 
-    public async Task<bool> UpdateAsync(Team team)
+    public async Task<bool> UpdateAsync(Team updatedTeam)
     {
         try
         {
-            var foundTeam = await GetByIdAsync(team.Id);
+            var team = await GetByNameAsync(updatedTeam.Name);
 
-            if (foundTeam == null)
+            if (team == null)
             {
-                _logger.LogInformation($"Could not update team data: {team.Name}");
+                _logger.LogInformation($"Could not update team data: {updatedTeam.Name}");
                 return false;
             }
 
-            foundTeam = team;
+            team = updatedTeam;
+            
             await _context.SaveChangesAsync();
             return true;
         }
@@ -66,7 +67,7 @@ public class TeamRepository : ITeamRepository
 
     public async Task<Team?> GetByNameAsync(string teamName)
     {
-        return await _context.Teams.FirstOrDefaultAsync(team => team.Name == teamName);
+        return await _context.Teams.FirstOrDefaultAsync(team => team.Name.ToLower() == teamName.ToLower());
     }
 
     public async Task<IEnumerable<Team>?> GetTeamsByCountryAsync(Country country)

@@ -93,7 +93,7 @@ public class TeamService : ITeamService
 
     public async Task<bool> UpdateTeamAsync(TeamProfileDto teamProfile)
     {
-        var team = await _teamRepository.GetByNameAsync(teamProfile.Name);
+        var team = await GenerateTeamFromParsedData(teamProfile);
         if (team == null)
         {
             return false;
