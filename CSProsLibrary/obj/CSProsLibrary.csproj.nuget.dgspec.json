@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/CSProsLibrary.csproj": {}
+    "/home/lky/Desktop/Projects/cs2-demoanalyzer/CSProsLibrary/CSProsLibrary.csproj": {}
   },
   "projects": {
-    "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/CSProsLibrary.csproj": {
+    "/home/lky/Desktop/Projects/cs2-demoanalyzer/CSProsLibrary/CSProsLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/CSProsLibrary.csproj",
+        "projectUniqueName": "/home/lky/Desktop/Projects/cs2-demoanalyzer/CSProsLibrary/CSProsLibrary.csproj",
         "projectName": "CSProsLibrary",
-        "projectPath": "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/CSProsLibrary.csproj",
-        "packagesPath": "/Users/lky/.nuget/packages/",
-        "outputPath": "/Users/lky/Desktop/WebProjects/cspros-main/CSPros-Backend/CSPros-Library/CSProsLibrary/obj/",
+        "projectPath": "/home/lky/Desktop/Projects/cs2-demoanalyzer/CSProsLibrary/CSProsLibrary.csproj",
+        "packagesPath": "/home/lky/.nuget/packages/",
+        "outputPath": "/home/lky/Desktop/Projects/cs2-demoanalyzer/CSProsLibrary/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/lky/.nuget/NuGet/NuGet.Config"
+          "/home/lky/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -33,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -94,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/lky/.dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
