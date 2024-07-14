@@ -92,6 +92,9 @@ public class DemoDownloaderService : IDemoDownloaderService
             // associate game with demo name
         }
         
+        _scrapingService.GoToNextPageOfResults();
+        await Start();
+        
         _driver.Quit();
     }
     

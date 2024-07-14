@@ -158,6 +158,11 @@ public class ScrapingService : IScrapingService
         _matchPage.GoToPage(href);
     }
 
+    public void GoToNextPageOfResults()
+    {
+        _resultsPage.GoToNextPage();
+    }
+
     public void DownloadDemosForMatch()
     {
         _matchPage.DownloadDemosForMatch();

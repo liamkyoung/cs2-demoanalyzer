@@ -12,4 +12,5 @@ public interface IScrapingService
     void GoToPage(string href);
     void GoToMatchPage(string href);
     void DownloadDemosForMatch();
+    void GoToNextPageOfResults();
 }
