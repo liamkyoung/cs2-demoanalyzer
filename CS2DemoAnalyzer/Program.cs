@@ -56,12 +56,6 @@ class Program
 		    var service = FirefoxDriverService.CreateDefaultService("/usr/local/bin");
                     FirefoxOptions options = new FirefoxOptions();
 		    options.AddArgument("--headless");
-                    options.EnableDownloads = true;
-                    options.ScriptTimeout = TimeSpan.FromSeconds(30);
-                    options.SetPreference("browser.download.folderList", 2);
-                    options.SetPreference("browser.download.manager.showWhenStarting", false);
-                    options.SetPreference("browser.download.dir", Environment.GetEnvironmentVariable("DEMO_DOWNLOAD_DIR"));
-                    options.SetPreference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.rar");
                     // Configure your Firefox options here, if necessary
     
                     return new FirefoxDriver(service, options);

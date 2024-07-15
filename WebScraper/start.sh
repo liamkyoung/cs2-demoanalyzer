@@ -1,5 +1,7 @@
 #!/bin/bash
 echo "[CSPROS] Launching CSPros Web Scraper..."
+DEMO_DOWNLOAD_DIR=~/Desktop/Demos_Download
+DEMO_ANALYZE_DIR=~/Desktop/Demos_Extracted
 cd ~/Desktop/Projects/cs2-demoanalyzer/WebScraper
 ~/.dotnet/dotnet run &
 SCRIPT_PID=$!

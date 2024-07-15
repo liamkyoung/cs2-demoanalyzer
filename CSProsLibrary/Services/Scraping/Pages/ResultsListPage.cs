@@ -11,7 +11,7 @@ public class ResultsListPage
     private const string MATCH_URL_XPATH = "//div[@class='result-con']//a[contains(@href, '/matches/')]";
     private const string RESULT_PAGE_URL = "https://www.hltv.org/results";
     private const string COOKIE_DECLINE_ID = "CybotCookiebotDialogBodyButtonDecline";
-    private int _offset = 100;
+    private int _offset = 0;
     private int _hltvStars = 2;
 
     public string PageUrl => $"{RESULT_PAGE_URL}?stars={_hltvStars}&offset={_offset}";
