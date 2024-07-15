@@ -38,9 +38,7 @@ class Program
     static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
             .ConfigureServices((hostContext, services) =>
-            {
-                EnvironmentHelper.SetEnvironmentVariables();
-                
+            {   
                 // Configuration
                 IConfiguration configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
@@ -55,7 +53,9 @@ class Program
                 services.AddTransient<IScrapingService, ScrapingService>();
                 services.AddSingleton<IWebDriver, FirefoxDriver>(provider =>
                 {
+		    var service = FirefoxDriverService.CreateDefaultService("/usr/local/bin");
                     FirefoxOptions options = new FirefoxOptions();
+		    options.AddArgument("--headless");
                     options.EnableDownloads = true;
                     options.ScriptTimeout = TimeSpan.FromSeconds(30);
                     options.SetPreference("browser.download.folderList", 2);
@@ -64,7 +64,7 @@ class Program
                     options.SetPreference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.rar");
                     // Configure your Firefox options here, if necessary
     
-                    return new FirefoxDriver(options);
+                    return new FirefoxDriver(service, options);
                 });
 
                 services.AddSingleton<IFileManagerService, FileManagerService>();
